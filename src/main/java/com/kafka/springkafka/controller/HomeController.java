@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController {
 
-    @KafkaListener(topics = "teststr",groupId = "group_id_1234",containerFactory = "employeeListenerStr")
+    @KafkaListener(topics = "teststr",groupId = "group_id_12345",containerFactory = "employeeListenerStr")
     public void consumeStringKafkaMessage(@Payload String message){
         System.out.println("message :"+message);
     }

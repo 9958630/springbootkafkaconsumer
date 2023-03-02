@@ -1,8 +1,13 @@
-package com.kafka.springkafka.model;
+package com.kafka.springkafka.entity;
 
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "employee")
 public class Employee{
+
+    @Id
     private String id;
     private int empID;
     private String empName;
@@ -12,6 +17,14 @@ public class Employee{
     private String empFatherName;
     private String companyName;
     private int salary;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public int getEmpID() {
         return empID;

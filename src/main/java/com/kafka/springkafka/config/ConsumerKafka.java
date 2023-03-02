@@ -24,8 +24,10 @@ public class ConsumerKafka {
         configProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         configProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         configProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
+
         configProps.put(JsonDeserializer.KEY_DEFAULT_TYPE, MyCustomEvent.class);
         configProps.put(JsonDeserializer.TRUSTED_PACKAGES,"*");
+
        /* JsonDeserializer<MyCustomEvent> jsonDeserializer = new JsonDeserializer<>(MyCustomEvent.class);
 
         //jsonDeserializer.addTrustedPackages("com.kafkaconsumer.springbootkafkaconsumer.model.MyCustomEvent");
